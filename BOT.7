@@ -1,0 +1,20 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# إعداد المتصفح
+driver = webdriver.Chrome()
+driver.get("https://quotex.io")
+
+# تسجيل الدخول
+email = driver.find_element(By.NAME, "email")
+password = driver.find_element(By.NAME, "password")
+email.send_keys("your-email@example.com")
+password.send_keys("your-password")
+password.send_keys(Keys.RETURN)
+
+# تنفيذ صفقة (مثال وهمي، تحتاج إلى تعديل العناصر بناءً على HTML الخاص بالموقع)
+time.sleep(5)
+buy_button = driver.find_element(By.CLASS_NAME, "buy-button-class")
+buy_button.click()
